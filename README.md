@@ -189,7 +189,7 @@ Per the capstone evaluation rubric (minimum 3 of 6 required):
 | **MCP Server** | `mcp_server.py` — exposes `analyze_new_idea` and `query_knowledge_base` as MCP tools for AI coding assistants |
 | **Security features** | `security.py` — input sanitization, prompt-injection detection, per-IP rate limiting, and post-generation output safety checks (all wired into `backend.py` and `orchestrator.py`) |
 | **Antigravity** | Entire project scaffolded and iteratively built in Google Antigravity — demonstrated in the walkthrough video |
-| **Deployability** | Deployed to Google Cloud Run (`us-central1`) — demonstrated in the walkthrough video |
+| **Deployability** | Fully containerizable and deployable to Google Cloud Run (`us-central1`); optional for judging per capstone guidelines |
 
 IdeaLens is also architecturally a genuine multi-agent system — four specialist agents (culture, business, sustainability, accessibility) run in parallel via `ThreadPoolExecutor` in `orchestrator.py`, each independently grounded with its own RAG-retrieved context — though the agents are built directly on the `google-genai` SDK rather than the ADK `LlmAgent`/`Runner` framework specifically.
 
@@ -197,7 +197,9 @@ IdeaLens is also architecturally a genuine multi-agent system — four specialis
 
 ## Deployment
 
-Deployed to Google Cloud Run (`us-central1`). *(Add your live Cloud Run URL here once deployed, and update `API_URL` in `frontend/index.html` to point to it instead of `localhost:8000`.)*
+This project can be run fully locally by following the Setup and Usage instructions above — no live deployment is required to evaluate it. Per the capstone guidelines, deploying to a public endpoint is optional for judging purposes.
+
+If deployed, IdeaLens runs on Google Cloud Run (`us-central1`), live at: `<add your Cloud Run URL here if deployed>`. Deploying it yourself only requires setting `GEMINI_API_KEY` as an environment variable on the Cloud Run service and updating `API_URL` in `frontend/index.html` to point to the deployed URL instead of `localhost:8000`.
 
 ---
 
