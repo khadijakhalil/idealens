@@ -2,7 +2,7 @@
 
 **A multi-agent AI system that evaluates any product or business idea through four expert lenses — in parallel.**
 
-Built for the Kaggle 5-Day AI Agents Intensive Capstone (Freestyle Track).
+Built for the Kaggle 5-Day AI Agents Intensive Capstone (Agents for Business Track).
 
 ---
 
@@ -205,4 +205,5 @@ If deployed, IdeaLens runs on Google Cloud Run (`us-central1`), live at: `<add y
 
 ## Built With
 
-Scaffolded using [Google Antigravity](https://antigravity.google) and developed as part of the [Kaggle 5-Day AI Agents Intensive](https://www.kaggle.com/) Capstone, Freestyle Track.
+Scaffolded using [Google Antigravity](https://antigravity.google) and developed as part of the [Kaggle 5-Day AI Agents Intensive](https://www.kaggle.com/) Capstone, Agents for Business Track.
+
