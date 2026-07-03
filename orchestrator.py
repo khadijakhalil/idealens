@@ -93,7 +93,10 @@ class IdeaLensOrchestrator:
         # single agent call, not the sum of all four.
         results = {}
         logger.info("Starting parallel execution of lens agents...")
-        
+
+        # ThreadPoolExecutor (not asyncio/multiprocessing): these are I/O-bound Gemini API
+        # calls, not CPU-bound work, so threads give the concurrency win without the
+        # complexity of async/await or process-based overhead.
         with ThreadPoolExecutor(max_workers=len(selected_lenses)) as executor:
             future_to_lens = {}
             for lens in selected_lenses:
